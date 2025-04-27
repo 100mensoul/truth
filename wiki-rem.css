@@ -1,0 +1,88 @@
+/* 基本設定 */
+body {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  background: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(90deg, 
+    #C0C0C0 0%, 
+    #FFFF00 10%, 
+    #00FFFF 20%, 
+    #00FF00 30%, 
+    #FF00FF 40%, 
+    #FF0000 50%, 
+    #0000FF 60%, 
+    #000000 70%);
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header .subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* 目次 */
+.toc {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.toc h2 {
+  font-size: 1.4rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.5rem 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+/* メインセクション */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 2rem 1rem;
+  border-top: 1px solid #ccc;
+}
