@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>夢を投稿する｜NEVER EVER ERROR</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background: linear-gradient(to bottom, #d4e6f9, #eaf4ff);
+      color: #334e68;
+      margin: 0;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #336699;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffffcc;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(100,150,200,0.2);
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background: #6699cc;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #4477aa;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .back-link a {
+      color: #336699;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>あなたの夢を投稿する</h1>
+  </header>
+
+  <form>
+    <label for="name">お名前（ニックネームOK）</label>
+    <input type="text" id="name" name="name" placeholder="任意です">
+
+    <label for="dream">夢の内容</label>
+    <textarea id="dream" name="dream" rows="8" placeholder="夢の内容を自由に書いてください"></textarea>
+
+    <button type="submit">送信する</button>
+  </form>
+
+  <div class="back-link">
+    <a href="index.html">◀ 話数一覧へ戻る</a>
+  </div>
+
+</body>
+</html>
