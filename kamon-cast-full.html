@@ -94,47 +94,50 @@
     </div>
   </template>
 
-  <!-- =====  内蔵 JS  ===== -->
-  <script>
-  /* ---------- 登場人物データ ---------- */
-  const characters = [
-    {
-      id: "kawai-ui",
-      name: "河合 雨衣",
-      aliases: ["ウイのヤリイカ", "タチウオ"],
-      age: 34,
-      height_cm: 167,
-      ability: "雨乞い／気象操作",
-      short_desc: "“雨女”として知られる紋次郎の姉。水泳は国体級。",
-      story: `34 歳／身長 167 cm。河合紋次郎より二つ上の姉。ふたりで並ぶと「美女と野獣」の図になる。
-幼い頃から“雨女”として知られ、小学校の遠足はことごとく雨で中止。両手で三角形を作り、中心に向かって祈ると天に願いが通じると信じている。運動と団体行動が苦手だったため、そうして強制イベントを逃れていた。
-京都の神泉苑に立ち寄った際、空海伝説の残るその地で雨乞いの力を自覚。以後、雨体質のコントロールを研究し、高校時代には自分の周囲だけに雨雲を呼べるようになる。
-水泳は国体レベル。「ウイのヤリイカ」「タチウオ」という異名を持つが、音や感覚が“うるさくなった”として中学で自主退部。成長後は密かにダイビング資格を取得し、人ではない生き物との語らいを楽しんでいる。
-大学・大学院では先住民研究を専攻するも中退。その後数年間の行方は不明。帰郷したときには腰まで伸びた長髪だった。
-現在は銀がかった金髪。占い師、セラピスト、投資家、文筆家、SE、演奏家など多彩に活動しつつ紋次郎宅で居候生活。弟は「厄介だけど憎めない」とぼやいている。
-    }
-    // ---- ここに追加キャラを追記 ----
-  ];
 
-  /* ---------- レンダリング ---------- */
-  const grid = document.getElementById('char-grid');
-  const tpl  = document.getElementById('char-card');
+ <!-- 🔻 ここから貼り替え 🔻 -->
+<script>
+const characters = [
+  {
+    id: "kawai-ui",
+    name: "河合 雨衣",
+    aliases: ["ウイのヤリイカ", "タチウオ"],
+    age: 34,
+    height_cm: 167,
+    ability: "雨乞い／気象操作",
+    short_desc: "“雨女”として知られる紋次郎の姉。水泳は国体級。",
+    story: `34歳。紋次郎より２つ歳の離れた姉。身長は167センチ。紋次郎と歩くと美女と野獣の見た目になる。
+モテるが独身であり、距離を近づけようとした男性が彼女のスピリチュアルさについていけないらしい。
+幼い頃より巫女ぶりを発揮し、小学校の遠足はことごとく雨。両手で三角形を作り祈ると雲を呼ぶという。
+京都・神泉苑で雨乞いの力を自覚。以後コントロールを研究し、高校時には自分の周囲だけ降らせる術を会得。
+水泳は国体級。「ウイのヤリイカ」「タチウオ」の異名を持つが、感覚が“うるさく”なり自主退部。
+大学院で先住民研究を学ぶも中退、その後消息不明。いまは銀がかった金髪で、占い・セラピー・投資・執筆など多業。
+紋次郎宅に居候中で、弟は「厄介だけど憎めない」とぼやく。`
+  }
+  /* 追加キャラはここにカンマ区切りでオブジェクトを追記 */
+];
 
-  characters.forEach(c => {
-    const node = tpl.content.cloneNode(true);
-    node.querySelector('.name').textContent  = c.name;
-    node.querySelector('.alias').textContent = c.aliases.join('／');
-    node.querySelector('.short').textContent = c.short_desc;
-    node.querySelector('.meta').innerHTML =
-      `<li>年齢：${c.age}</li><li>身長：${c.height_cm} cm</li><li>能力：${c.ability}</li>`;
-    node.querySelector('.story').textContent = c.story;
+/* ---------- レンダリング ---------- */
+const grid = document.getElementById('char-grid');
+const tpl  = document.getElementById('char-card');
 
-    const btn = node.querySelector('.more');
-    const sec = node.querySelector('.detail');
-    btn.addEventListener('click', () => sec.classList.toggle('hidden'));
+characters.forEach(c => {
+  const node = tpl.content.cloneNode(true);
+  node.querySelector('.name').textContent  = c.name;
+  node.querySelector('.alias').textContent = c.aliases.join('／');
+  node.querySelector('.short').textContent = c.short_desc;
+  node.querySelector('.meta').innerHTML =
+    `<li>年齢：${c.age}</li><li>身長：${c.height_cm} cm</li><li>能力：${c.ability}</li>`;
+  node.querySelector('.story').textContent = c.story;
 
-    grid.appendChild(node);
-  });
-  </script>
+  const btn = node.querySelector('.more');
+  const sec = node.querySelector('.detail');
+  btn.addEventListener('click', () => sec.classList.toggle('hidden'));
+
+  grid.appendChild(node);
+});
+</script>
+
+ 
 </body>
 </html>
