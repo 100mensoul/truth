@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ロゴテスト</title>
+  <style>
+    body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:#eee;}
+  </style>
+</head>
+<body>
+
+<!-- ↓ここの <svg>〜</svg> をA/B/C案のコードに置き換えるだけ -->
+ <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- 白黒半円 -->
+  <defs>
+    <radialGradient id="blur" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="47%" stop-color="#000"/>
+      <stop offset="53%" stop-color="#fff"/>
+    </radialGradient>
+  </defs>
+  <circle cx="512" cy="512" r="480" fill="url(#blur)" />
+  <!-- 文字（国家転覆人／河合紋次郎） -->
+  <g font-family="Noto Sans JP" font-weight="700" font-size="128" text-anchor="middle">
+    <!-- 上段：国家転覆人 -->
+    <text x="512" y="300" fill="#fff">国家転覆人</text>
+    <!-- 下段：河合紋次郎（明朝：個の血統感を強調）-->
+    <text x="512" y="760" font-family="YuMincho" fill="#000">河合紋次郎</text>
+  </g>
+</svg>
+
+</body>
+</html>
