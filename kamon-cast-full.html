@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>国家転覆人 河合紋次郎｜登場人物</title>
+
+  <!-- =====  内蔵 CSS  ===== -->
+  <style>
+    :root {
+      --bg: #0e0f1a;
+      --card-bg: rgba(30,35,60,.6);
+      --radius: 1.4rem;
+      --text: #e5e6ff;
+      --accent: #9bf0ff;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","游ゴシック",YuGothic,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+    h1{margin:0;padding:1.2rem 1.6rem;font-size:1.3rem;}
+
+    /* グリッド */
+    .grid{
+      display:grid;
+      gap:2rem;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      padding:2rem;
+    }
+
+    /* カード */
+    .card{
+      background:var(--card-bg);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:var(--radius);
+      padding:1.6rem;
+      backdrop-filter:blur(6px);
+      transition:transform .3s;
+    }
+    .card:hover{transform:translateY(-4px);}
+
+    .name  {font-size:1.35rem;font-weight:700;margin:0 0 .2rem;}
+    .alias {font-size:.9rem;opacity:.75;margin:0;}
+
+    .more{
+      margin-top:1rem;
+      padding:.35rem .9rem;
+      border:1px solid var(--accent);
+      border-radius:.8rem;
+      background:transparent;
+      color:var(--accent);
+      cursor:pointer;
+    }
+
+    .detail{margin-top:1rem;font-size:.85rem;line-height:1.45;}
+    .detail.hidden{display:none;}
+    .meta{margin:.6rem 0 0;padding-left:1.1em;list-style:disc;}
+
+    /* 長文 */
+    details.story-block{margin-top:.8rem;}
+    details.story-block summary{
+      cursor:pointer;
+      color:var(--accent);
+      outline:none;
+    }
+    details.story-block p{margin:.6rem 0 0;line-height:1.6;}
+  </style>
+</head>
+
+<body>
+  <h1>登場人物一覧</h1>
+  <main id="char-grid" class="grid"></main>
+
+  <!-- テンプレート -->
+  <template id="char-card">
+    <div class="card">
+      <h2 class="name"></h2>
+      <p  class="alias"></p>
+      <button class="more">More</button>
+
+      <section class="detail hidden">
+        <p class="short"></p>
+        <ul class="meta"></ul>
+
+        <!-- 長文プロフィール -->
+        <details class="story-block">
+          <summary>全文を読む</summary>
+          <p class="story"></p>
+        </details>
+      </section>
+    </div>
+  </template>
+
+  <!-- =====  内蔵 JS  ===== -->
+  <script>
+  /* ---------- 登場人物データ ---------- */
+  const characters = [
+    {
+      id: "kawai-ui",
+      name: "河合 雨衣",
+      aliases: ["ウイのヤリイカ", "タチウオ"],
+      age: 34,
+      height_cm: 167,
+      ability: "雨乞い／気象操作",
+      short_desc: "“雨女”として知られる紋次郎の姉。水泳は国体級。",
+      story: `34 歳／身長 167 cm。河合紋次郎より二つ上の姉。ふたりで並ぶと「美女と野獣」の図になる。
+幼い頃から“雨女”として知られ、小学校の遠足はことごとく雨で中止。両手で三角形を作り、中心に向かって祈ると天に願いが通じると信じている。運動と団体行動が苦手だったため、そうして強制イベントを逃れていた。
+京都の神泉苑に立ち寄った際、空海伝説の残るその地で雨乞いの力を自覚。以後、雨体質のコントロールを研究し、高校時代には自分の周囲だけに雨雲を呼べるようになる。
+水泳は国体レベル。「ウイのヤリイカ」「タチウオ」という異名を持つが、音や感覚が“うるさくなった”として中学で自主退部。成長後は密かにダイビング資格を取得し、人ではない生き物との語らいを楽しんでいる。
+大学・大学院では先住民研究を専攻するも中退。その後数年間の行方は不明。帰郷したときには腰まで伸びた長髪だった。
+現在は銀がかった金髪。占い師、セラピスト、投資家、文筆家、SE、演奏家など多彩に活動しつつ紋次郎宅で居候生活。弟は「厄介だけど憎めない」とぼやいている。
+    }
+    // ---- ここに追加キャラを追記 ----
+  ];
+
+  /* ---------- レンダリング ---------- */
+  const grid = document.getElementById('char-grid');
+  const tpl  = document.getElementById('char-card');
+
+  characters.forEach(c => {
+    const node = tpl.content.cloneNode(true);
+    node.querySelector('.name').textContent  = c.name;
+    node.querySelector('.alias').textContent = c.aliases.join('／');
+    node.querySelector('.short').textContent = c.short_desc;
+    node.querySelector('.meta').innerHTML =
+      `<li>年齢：${c.age}</li><li>身長：${c.height_cm} cm</li><li>能力：${c.ability}</li>`;
+    node.querySelector('.story').textContent = c.story;
+
+    const btn = node.querySelector('.more');
+    const sec = node.querySelector('.detail');
+    btn.addEventListener('click', () => sec.classList.toggle('hidden'));
+
+    grid.appendChild(node);
+  });
+  </script>
+</body>
+</html>
