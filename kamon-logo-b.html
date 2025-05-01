@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ロゴテスト</title>
+  <style>
+    body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:#eee;}
+  </style>
+</head>
+<body>
+
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- 外円 -->
+  <circle cx="512" cy="512" r="480" fill="#000"/>
+  <!-- 三つ巴パス（簡略版） -->
+  <g fill="#fff">
+    <path d="M512 160 A352 352 0 0 1 832 512 Q720 490 664 376 Z"/>
+    <path transform="rotate(120 512 512)"
+          d="M512 160 A352 352 0 0 1 832 512 Q720 490 664 376 Z"/>
+    <path transform="rotate(240 512 512)"
+          d="M512 160 A352 352 0 0 1 832 512 Q720 490 664 376 Z"/>
+  </g>
+  <!-- 文字配置 -->
+  <g font-family="Noto Sans JP" font-weight="700" font-size="108" text-anchor="middle" fill="#000">
+    <text x="512" y="240">国家</text>
+    <text x="725" y="620">転覆</text>
+    <text x="300" y="620">人</text>
+  </g>
+  <g font-family="YuMincho" font-size="108" text-anchor="middle" fill="#fff">
+    <text x="512" y="430">河合</text>
+    <text x="512" y="760">紋次郎</text>
+  </g>
+</svg>
+
+</body>
+</html>
