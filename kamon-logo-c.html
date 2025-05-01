@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ロゴテスト</title>
+  <style>
+    body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:#eee;}
+  </style>
+</head>
+<body>
+
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- 外円 -->
+  <circle cx="512" cy="512" r="480" fill="#fff" stroke="#000" stroke-width="16"/>
+  <!-- 格子線（細灰） -->
+  <g stroke="#888" stroke-width="4">
+    <!-- 垂直 -->
+    <line x1="512" y1="32" x2="512" y2="992"/>
+    <!-- 水平 -->
+    <line x1="32" y1="512" x2="992" y2="512"/>
+  </g>
+  <!-- 文字：縦書き2列 -->
+  <g font-family="Noto Sans JP" font-weight="700" font-size="112" fill="#000" text-anchor="middle">
+    <!-- 左列（国家転覆人） -->
+    <text x="380" y="200">国</text>
+    <text x="380" y="360">家</text>
+    <text x="380" y="520">転</text>
+    <text x="380" y="680">覆</text>
+    <text x="380" y="840">人</text>
+    <!-- 右列（河合紋次郎：明朝） -->
+    <text x="644" y="200" font-family="YuMincho">河</text>
+    <text x="644" y="360" font-family="YuMincho">合</text>
+    <text x="644" y="520" font-family="YuMincho">紋</text>
+    <text x="644" y="680" font-family="YuMincho">次</text>
+    <text x="644" y="840" font-family="YuMincho">郎</text>
+  </g>
+</svg>
+
+</body>
+</html>
