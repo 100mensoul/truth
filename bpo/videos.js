@@ -9,7 +9,7 @@ const videoData = [
     ]
   },
   {
-    seriesTitle: "地域へ飛び出せ！STEAM CHAOS",
+    seriesTitle: "地域へ飛び出すSTEAM CHAOS",
     seriesId: "steamchaos",
     videos: [
       { id: "AAAABBBBCCC", title: "STEAM大作戦①" },
