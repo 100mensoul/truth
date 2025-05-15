@@ -3,7 +3,7 @@ const videoData = [
     seriesTitle: "へーんしん！ULTLAシリーズ",
     seriesId: "ultla",
     videos: [
-      { id: "XXXXXXXXXXX", title: "ULTLA変身編①" },
+      { id: "nqy4wDqlEpA", title: "ウゴクとトマル" },
       { id: "YYYYYYYYYYY", title: "ULTLA変身編②" },
       { id: "ZZZZZZZZZZZ", title: "ULTLA変身編③" },
     ]
