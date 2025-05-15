@@ -17,7 +17,7 @@ const videoData = [
     ]
   },
   {
-    seriesTitle: "眠れる獅子たちよ、これがGODHANDSだ！",
+    seriesTitle: "目覚めよ！GODHANDSだ！",
     seriesId: "godhands",
     videos: [
       { id: "GGGGHHHHIII", title: "GODHANDS Episode 1" },
@@ -25,7 +25,7 @@ const videoData = [
     ]
   },
   {
-    seriesTitle: "すべての学びはここから〜自分学のススメ〜",
+    seriesTitle: "学びの出発地点〜自分学のススメ〜",
     seriesId: "jibungaku",
     videos: [
       { id: "MMMMNNNNOOO", title: "自分学Intro" },
