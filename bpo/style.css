@@ -1,3 +1,60 @@
+body {
+  margin: 0;
+  background-color: #1e2d24; /* 深緑基調 */
+  color: #f5ecd7; /* 生成りっぽい白 */
+  font-family: 'Courier New', monospace;
+}
+
+header {
+  background: #2d4031;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #d2b48c;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6em;
+  color: #f7dfb4; /* 黄色味を帯びた暖色 */
+  letter-spacing: 1px;
+}
+
+.mylist-link {
+  color: #87e0c4;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+main {
+  padding: 1.5em 2em;
+}
+
+.series-section {
+  margin-bottom: 3em;
+}
+
+.series-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5em;
+}
+
+.series-title h2 {
+  margin: 0;
+  font-size: 1.1em;
+  color: #f7dfb4;
+  font-weight: bold;
+}
+
+.series-title a {
+  color: #d8cab3;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
 .video-row {
   display: flex;
   overflow-x: auto;
@@ -8,8 +65,9 @@
 
 .video-card {
   flex: 0 0 180px;
-  background: #222;
-  border-radius: 8px;
+  background: #324437;
+  border: 2px solid #d2b48c;
+  border-radius: 4px;
   overflow: hidden;
   position: relative;
   scroll-snap-align: start;
@@ -22,17 +80,20 @@
 
 .video-card iframe {
   width: 100%;
-  height: 100px; /* 小さめ動画表示（YouTubeサムネ代用として） */
+  height: 100px;
   border: none;
   border-radius: 0;
-  pointer-events: none; /* サムネイル表示だけの場合 */
+  pointer-events: none;
+  background: #000;
 }
 
 .video-title {
   padding: 0.5em;
   font-size: 0.85em;
   text-align: center;
-  color: #ccc;
+  color: #f5ecd7;
+  background-color: #2d4031;
+  border-top: 1px solid #d2b48c;
 }
 
 .favorite-btn {
@@ -50,5 +111,5 @@
 }
 
 .favorite-btn.active {
-  color: #ffcc00;
+  color: #ffd700;
 }
