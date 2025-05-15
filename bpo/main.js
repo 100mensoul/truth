@@ -1,7 +1,6 @@
 const container = document.getElementById('video-sections');
 const mylistKey = 'boushit_mylist';
 
-// ロード時にお気に入りを取得
 let mylist = JSON.parse(localStorage.getItem(mylistKey) || '[]');
 
 function renderVideos() {
@@ -29,22 +28,26 @@ function renderVideos() {
       const card = document.createElement('div');
       card.className = 'video-card';
 
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube.com/embed/${video.id}`;
-      iframe.allowFullscreen = true;
+      // サムネイル画像に変更
+      const thumbnail = document.createElement('img');
+      thumbnail.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+      thumbnail.alt = video.title;
+      thumbnail.addEventListener('click', () => openModal(video.id));
 
       const favBtn = document.createElement('button');
       favBtn.className = 'favorite-btn';
       favBtn.innerHTML = mylist.includes(video.id) ? '★' : '☆';
       if (mylist.includes(video.id)) favBtn.classList.add('active');
-
-      favBtn.addEventListener('click', () => toggleFavorite(video.id, favBtn));
+      favBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleFavorite(video.id, favBtn);
+      });
 
       const caption = document.createElement('div');
       caption.className = 'video-title';
       caption.textContent = video.title;
 
-      card.appendChild(iframe);
+      card.appendChild(thumbnail);
       card.appendChild(favBtn);
       card.appendChild(caption);
       row.appendChild(card);
@@ -54,6 +57,8 @@ function renderVideos() {
     section.appendChild(row);
     container.appendChild(section);
   });
+
+  setupModal();
 }
 
 function toggleFavorite(id, btn) {
@@ -68,6 +73,33 @@ function toggleFavorite(id, btn) {
     btn.innerHTML = '☆';
   }
   localStorage.setItem(mylistKey, JSON.stringify(mylist));
+}
+
+// ===== モーダル機能 =====
+function setupModal() {
+  const modal = document.createElement('div');
+  modal.id = 'video-modal';
+  modal.innerHTML = `
+    <span id="modal-close">×</span>
+    <iframe id="modal-iframe" src="" allowfullscreen></iframe>
+  `;
+  document.body.appendChild(modal);
+
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+}
+
+function openModal(videoId) {
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('modal-iframe');
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('modal-iframe');
+  iframe.src = '';
+  modal.style.display = 'none';
 }
 
 renderVideos();
